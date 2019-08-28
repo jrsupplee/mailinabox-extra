@@ -20,7 +20,7 @@ Mailbox size recalculation by Dovecot can be forced using the command:
 Please report any bugs on github.
 
 
-Installing v0.41-quota
+Installing v0.42b-quota
 ----------------------
 
 To install the latest version, log into your box and execute the following commands:
@@ -34,7 +34,7 @@ Follow the standard directions for setting up an MiaB installation.  There are n
 The default quota is set to `0` which means unlimited.  If you want to set a different default quota, follow the directions above.
 
 
-Upgrading v0.41 to v.0.41-quota
+Upgrading v0.4x to v.0.42b-quota
 -------------------------------
 
 This is experimental software.  You have been warned.
@@ -68,6 +68,10 @@ Issues
 
 Changes
 -------
+
+### v0.42b-quota-0.18-beta
+
+* Update to v0.42b of Mail-in-a-Box
 
 ### v0.41-quota-0.18-beta
 
@@ -198,7 +202,7 @@ by him:
 	$ curl -s https://keybase.io/joshdata/key.asc | gpg --import
 	gpg: key C10BDD81: public key "Joshua Tauberer <jt@occams.info>" imported
 
-	$ git verify-tag v0.41
+	$ git verify-tag v0.42b
 	gpg: Signature made ..... using RSA key ID C10BDD81
 	gpg: Good signature from "Joshua Tauberer <jt@occams.info>"
 	gpg: WARNING: This key is not certified with a trusted signature!
@@ -211,7 +215,7 @@ and on his [personal homepage](https://razor.occams.info/). (Of course, if this 
 
 Checkout the tag corresponding to the most recent release:
 
-	$ git checkout v0.41
+	$ git checkout v0.42b
 
 Begin the installation.
 
