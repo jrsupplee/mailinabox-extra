@@ -28,20 +28,20 @@ class OptionsApp(npyscreen.NPSApp):
             editable=False
         )
 
-        form.add(
-            npyscreen.TitleFixedText,
-            name="POSTSRSD",
-            value="",
-            editable=False
-        )
-        form.add(
-            npyscreen.MultiLineEdit,
-            value="The PostSRSd daemon performs return path rewriting using the SRS protocol.\n"
-                  "Not that all messages, including locally delivered mail will have their return\n"
-                  "paths rewritten",
-            max_height=4,
-            editable=False
-        )
+        # form.add(
+        #     npyscreen.TitleFixedText,
+        #     name="POSTSRSD",
+        #     value="",
+        #     editable=False
+        # )
+        # form.add(
+        #     npyscreen.MultiLineEdit,
+        #     value="The PostSRSd daemon performs return path rewriting using the SRS protocol.\n"
+        #           "Not that all messages, including locally delivered mail will have their return\n"
+        #           "paths rewritten",
+        #     max_height=4,
+        #     editable=False
+        # )
 
         form.add(
             npyscreen.TitleFixedText,
