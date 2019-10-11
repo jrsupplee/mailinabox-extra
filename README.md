@@ -1,7 +1,16 @@
-Mail-in-a-Box with Quotas
-=========================
+Mail-in-a-Box Extra
+===================
 
-This is an experimental implementation of Mail-in-a-box with quota support.
+This is an experimental implementation of Mail-in-a-box with the following additional features:
+
+* **Quotas** -- has the same quota support as MiaB with quotas.
+
+* **Mailgraph** -- display statistics for your mail server
+
+* **Postgrey Off** -- ability to turn off `postgrey` support
+
+* **Policy SPF** -- ability to turn on SPF checks for incoming mail
+
 
 Quotas can be set and viewed in the control panel
 
@@ -20,12 +29,12 @@ Mailbox size recalculation by Dovecot can be forced using the command:
 Please report any bugs on github.
 
 
-Installing v0.4x-quota
------------------------
+Installing v0.4x-extra
+----------------------
 
 To install the latest version, log into your box and execute the following commands:
 
-	$ git clone https://github.com/jrsupplee/mailinabox.git
+	$ git clone https://github.com/jrsupplee/mailinabox-extra.git mailinabox
 	$ cd mailinabox
     $ sudo bash setup/bootstrap.sh
 
@@ -34,23 +43,21 @@ Follow the standard directions for setting up an MiaB installation.  There are n
 The default quota is set to `0` which means unlimited.  If you want to set a different default quota, follow the directions above.
 
 
-Upgrading v0.4x to v.0.4x-quota
---------------------------------
-
-This is experimental software.  You have been warned.
+Upgrading v0.4x to v.0.4x-extra
+-------------------------------
 
 * Rename your `mailinabox` directory to something like `miab.old`
 
 * Clone this repository using:
 
-    `git clone https://github.com/jrsupplee/mailinabox.git`
+    `git clone https://github.com/jrsupplee/mailinabox-extra.git mailinabox`
 
 * cd into `mailinabox` and run `sudo bash setup/bootstrap.sh`  On occasion there are lock errors when updating `Munin`.  Just re-run `sudo setup/start.sh` until the error does not occur.
 
 * Note: all existing users at the time of the upgrade will have there quota set to `0` (unlimited).
 
 
-Upgrading MiaB with quotas to a New Version
+Upgrading MiaB extra to a New Version
 -------------------------------------------
 
 * `cd` into the `mailinabox` directory.
@@ -69,80 +76,9 @@ Issues
 Changes
 -------
 
-### v0.43-quota-0.20-beta
+### v0.43-extra-0.10-beta
 
-* Hide *set quota* for a mailbox that has been archived
-
-### v0.43-quota-0.19-beta
-
-* Add user quota API documentation to the mail users page
-
-### v0.43-quota-0.18-beta
-
-* Update to v0.43 of Mail-in-a-Box
-
-### v0.42b-quota-0.18-beta
-
-* Update to v0.42b of Mail-in-a-Box
-
-### v0.41-quota-0.18-beta
-
-* Bump version to add a new annotated tag.  The last version had a plain tag which is not seen when checking for the latest version.
-
-### v0.41-quota-0.17-beta
-
-* Change status of project to beta.  No changes to the code
-
-### v0.41-quota-0.17-alpha
-
-* Update the README
-
-### v0.41-quota-0.16-alpha
-
-* Update to v0.41 of Mail-in-a-Box
-
-### v0.40-quota-0.16-alpha
-
-* Fix problem with quota field on control panel that prevented adding users.
-
-### v0.40-quota-0.15-alpha
-
-* Fix bug where quotas are not recalculated when a user's quota is changed in control panel
-
-### v0.40-quota-0.14-alpha
-
-* When updating a user's quota, execute `doveadm quota recalc -u <email>` to forces an immediate recalculation of the user's quota.
-
-* Add a thousands separator (,) to the messages count in the control panel user list.
-
-* Execute `doveadm quota recalc -A` to force a recalculation of all user quotas when running `start.sh`.
-
-* Get rid of the error message complaining that the `quota` column already exists when upgrading from a previous version of `v0.40-quota`.
-
-### v0.40-quota-0.13-alpha
-
-* Add a `default-quota` setting in `settings.yaml`.
-
-* Add input for setting quota when entering a new user in control panel.
-
-* Modify `tools/mail.py` to allow for setting and getting the default system quota.
-
-* Modify `tools/mail.py` to allow for getting a user's quota setting.
-
-* Modify the mail users list in control panel to display percentage of quota used.
-
-### v0.40-quota-0.12-alpha
-
-* Update README
-
-### v0.40-quota-0.11-alpha
-
-* Read latest version from this repository not the Mail-in-a-Box master repository
-
-### v0.40-quota-0.1-alpha
-
-* First experimental release of Mail-in-a-Box for quotas.
-* Quotas are working and there is basic support in the control panel and `tools/mail.py`.
+* Initial release of the a custom repository with extra features for MiaB
 
 
 Reference Documents
