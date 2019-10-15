@@ -74,7 +74,8 @@ class OptionsApp(npyscreen.NPSApp):
             max_height=-2,
             value=init_values,
             name="Options",
-            values= ["POSTGREY","POSTSRSD","POLICY_SPF"],
+            # values= ["POSTGREY","POSTSRSD","POLICY_SPF"],
+            values= ["POSTGREY","POLICY_SPF"],
             scroll_exit=True
         )
 
