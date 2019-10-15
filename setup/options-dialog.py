@@ -86,7 +86,7 @@ class OptionsApp(npyscreen.NPSApp):
             print('POSTGREY=%i' % (1 if 0 in options.value else 0), file=output)
             # print('POSTSRSD=%i' % (1 if 1 in options.value else 0), file=output)
             print('POSTSRSD=0', file=output)
-            print('POLICY_SPF=%i' % (1 if 1 in options.value else 0), file=output)
+            print('POLICY_SPF=%i' % (1 if 2 in options.value else 0), file=output)
             # print(npyscreen.ThemeManager.default_colors, file=output)
 
 
