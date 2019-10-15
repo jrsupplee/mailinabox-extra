@@ -76,6 +76,12 @@ Issues
 Changes
 -------
 
+### v0.43-extra-0.11-beta
+
+* Check the `mailinabox-extra` repository for the latest version.
+
+* Remove the `POSTSRSD` option from the options dialog as some problems have been encountered with the implementation.
+
 ### v0.43-extra-0.10-beta
 
 * Initial release of the a custom repository with extra features for MiaB
