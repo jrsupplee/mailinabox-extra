@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.43-extra-0.12-beta
+
+* Fix bug introduced by last version.  Remove `postfix` parameters associated with POSTSRSD instead of setting them to blank.
+
 ### v0.43-extra-0.11-beta
 
 * Check the `mailinabox-extra` repository for the latest version.
