@@ -5,7 +5,7 @@ flask
 dnspython
 python-dateutil
 idna>=2.0.0
-cryptography==2.2.2
+cryptography==2.3
 boto
 psutil
 npyscreen
