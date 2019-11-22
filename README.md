@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.43-extra-0.14-beta
+
+* Fix bug that crashed user list when there is an archived user.
+
 ### v0.43-extra-0.13-beta
 
 * Fix problem with the dns authentication scripts for Let's Encrypt crashing the DNS server.
