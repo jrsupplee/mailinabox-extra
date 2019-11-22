@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.43-extra-0.13-beta
+
+* Fix problem with the dns authentication scripts for Let's Encrypt crashing the DNS server.
+
 ### v0.43-extra-0.12-beta
 
 * Fix bug introduced by last version.  Remove `postfix` parameters associated with POSTSRSD instead of setting them to blank.

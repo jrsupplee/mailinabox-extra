@@ -6,3 +6,5 @@ API_KEY=`cat /var/lib/mailinabox/api.key`
 HOSTNAME=`hostname`
 
 curl -s --insecure -X DELETE --user "$API_KEY:" https://$HOSTNAME/admin/dns/custom/_acme-challenge.$CERTBOT_DOMAIN/TXT
+
+sleep 15
