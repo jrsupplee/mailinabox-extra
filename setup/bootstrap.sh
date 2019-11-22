@@ -20,7 +20,7 @@ if [ -z "$TAG" ]; then
 	# want to display in status checks.
 	if [ "`lsb_release -d | sed 's/.*:\s*//' | sed 's/18\.04\.[0-9]/18.04/' `" == "Ubuntu 18.04 LTS" ]; then
 		# This machine is running Ubuntu 18.04.
-		TAG=v0.43-extra-0.10-beta
+		TAG=v0.43-extra-0.12-beta
 
 	elif [ "`lsb_release -d | sed 's/.*:\s*//' | sed 's/14\.04\.[0-9]/14.04/' `" == "Ubuntu 14.04 LTS" ]; then
 		# This machine is running Ubuntu 14.04.
@@ -57,7 +57,7 @@ if [ ! -d $HOME/mailinabox ]; then
 	echo Downloading Mail-in-a-Box $TAG. . .
 	git clone \
 		-b $TAG --depth 1 \
-		https://github.com/mail-in-a-box/mailinabox \
+		https://github.com/jrsupplee/mailinabox-extra \
 		$HOME/mailinabox \
 		< /dev/null 2> /dev/null
 

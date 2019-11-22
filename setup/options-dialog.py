@@ -63,18 +63,19 @@ class OptionsApp(npyscreen.NPSApp):
         if int(os.getenv('POSTGREY', 1)) == 1:
             init_values.append(0)
 
-        if int(os.getenv('POSTSRSD', 0)) == 1:
-            init_values.append(1)
+        # if int(os.getenv('POSTSRSD', 0)) == 1:
+        #     init_values.append(1)
 
         if int(os.getenv('POLICY_SPF', 0)) == 1:
-            init_values.append(2)
+            init_values.append(1)
 
         options = form.add(
             npyscreen.TitleMultiSelect,
             max_height=-2,
             value=init_values,
             name="Options",
-            values= ["POSTGREY","POSTSRSD","POLICY_SPF"],
+            # values= ["POSTGREY","POSTSRSD","POLICY_SPF"],
+            values= ["POSTGREY","POLICY_SPF"],
             scroll_exit=True
         )
 
@@ -83,8 +84,9 @@ class OptionsApp(npyscreen.NPSApp):
 
         with open('_options.sh', 'w') as output:
             print('POSTGREY=%i' % (1 if 0 in options.value else 0), file=output)
-            print('POSTSRSD=%i' % (1 if 1 in options.value else 0), file=output)
-            print('POLICY_SPF=%i' % (1 if 2 in options.value else 0), file=output)
+            # print('POSTSRSD=%i' % (1 if 1 in options.value else 0), file=output)
+            print('POSTSRSD=0', file=output)
+            print('POLICY_SPF=%i' % (1 if 1 in options.value else 0), file=output)
             # print(npyscreen.ThemeManager.default_colors, file=output)
 
 

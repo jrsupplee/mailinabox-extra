@@ -105,7 +105,7 @@ tools/editconf.py /etc/postfix/master.cf -s -w \
 # Install the `outgoing_mail_header_filters` file required by the new 'authclean' service.
 cp conf/postfix_outgoing_mail_header_filters /etc/postfix/outgoing_mail_header_filters
 
-# Modify the `outgoing_mail_header_filters` file to use the local machine name and ip 
+# Modify the `outgoing_mail_header_filters` file to use the local machine name and ip
 # on the first received header line.  This may help reduce the spam score of email by
 # removing the 127.0.0.1 reference.
 sed -i "s/PRIMARY_HOSTNAME/$PRIMARY_HOSTNAME/" /etc/postfix/outgoing_mail_header_filters
@@ -271,11 +271,11 @@ if [ $POSTSRSD == 1 ]; then
     hide_output systemctl restart postsrsd
 
 else
-    postconf -e \
-        sender_canonical_maps= \
-        sender_canonical_classes= \
-        recipient_canonical_maps= \
-        recipient_canonical_classes=
+    postconf -X \
+        sender_canonical_maps \
+        sender_canonical_classes \
+        recipient_canonical_maps \
+        recipient_canonical_classes
 
     hide_output systemctl disable postsrsd
     hide_output systemctl stop postsrsd
