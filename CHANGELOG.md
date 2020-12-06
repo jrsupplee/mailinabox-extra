@@ -1,6 +1,56 @@
 CHANGELOG
 =========
 
+v0.51 (November 14, 2020)
+-------------------------
+
+Software updates:
+
+* Upgraded Nextcloud from 17.0.6 to 20.0.1 (with Contacts from 3.3.0 to 3.4.1 and Calendar from 2.0.3 to 2.1.2)
+* Upgraded Roundcube to version 1.4.9.
+
+Mail:
+
+* The MTA-STA max_age value was increased to the normal one week.
+
+Control Panel:
+
+* Two-factor authentication can now be enabled for logins to the control panel. However, keep in mind that many online services (including domain name registrars, cloud server providers, and TLS certificate providers) may allow an attacker to take over your account or issue a fraudulent TLS certificate with only access to your email address, and this new two-factor authentication does not protect access to your inbox. It therefore remains very important that user accounts with administrative email addresses have strong passwords.
+* TLS certificate expiry dates are now shown in ISO8601 format for clarity.
+
+v0.50 (September 25, 2020)
+--------------------------
+
+Setup:
+
+* When upgrading from versions before v0.40, setup will now warn that ownCloud/Nextcloud data cannot be migrated rather than failing the installation.
+
+Mail:
+
+* An MTA-STS policy for incoming mail is now published (in DNS and over HTTPS) when the primary hostname and email address domain both have a signed TLS certificate installed, allowing senders to know that an encrypted connection should be enforced.
+* The per-IP connection limit to the IMAP server has been doubled to allow more devices to connect at once, especially with multiple users behind a NAT.
+
+DNS:
+
+* autoconfig and autodiscover subdomains and CalDAV/CardDAV SRV records are no longer generated for domains that don't have user accounts since they are unnecessary.
+* IPv6 addresses can now be specified for secondary DNS nameservers in the control panel.
+
+TLS:
+
+* TLS certificates are now provisioned in groups by parent domain to limit easy domain enumeration and make provisioning more resilient to errors for particular domains.
+
+Control Panel:
+
+* The control panel API is now fully documented at https://mailinabox.email/api-docs.html.
+* User passwords can now have spaces.
+* Status checks for automatic subdomains have been moved into the section for the parent domain.
+* Typo fixed.
+
+Web:
+
+* The default web page served on fresh installations now adds the `noindex` meta tag.
+* The HSTS header is revised to also be sent on non-success responses.
+
 v0.48 (August 26, 2020)
 -----------------------
 
