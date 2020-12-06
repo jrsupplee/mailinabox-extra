@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.51-extra-0.14-beta
+
+* Update to mail-in-a-box v0.51
+
 ### v0.50-extra-0.14-beta
 
 * Update to mail-in-a-box v0.50
