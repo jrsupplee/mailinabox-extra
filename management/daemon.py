@@ -1,3 +1,12 @@
+#!/usr/local/lib/mailinabox/env/bin/python3
+#
+# During development, you can start the Mail-in-a-Box control panel
+# by running this script, e.g.:
+#
+# service mailinabox stop # stop the system process
+# DEBUG=1 management/daemon.py
+# service mailinabox start # when done debugging, start it up again
+
 import os, os.path, re, json, time
 import base64
 import sys
@@ -392,6 +401,12 @@ def letsencrypt_dns_cleanup(domain):
 	except ValueError as e:
 		return (str(e), 400)
 
+@app.route('/dns/zonefile/<zone>')
+@authorized_personnel_only
+def dns_get_zonefile(zone):
+	from dns_update import get_dns_zonefile
+	return Response(get_dns_zonefile(zone, env), status=200, mimetype='text/plain')
+
 # SSL
 
 @app.route('/ssl/status')
@@ -783,7 +798,22 @@ def log_failed_login(request):
 # APP
 
 if __name__ == '__main__':
-	if "DEBUG" in os.environ: app.debug = True
+	if "DEBUG" in os.environ:
+		# Turn on Flask debugging.
+		app.debug = True
+
+		# Use a stable-ish master API key so that login sessions don't restart on each run.
+		# Use /etc/machine-id to seed the key with a stable secret, but add something
+		# and hash it to prevent possibly exposing the machine id, using the time so that
+		# the key is not valid indefinitely.
+		import hashlib
+		with open("/etc/machine-id") as f:
+			api_key = f.read()
+		api_key += "|" + str(int(time.time() / (60*60*2)))
+		hasher = hashlib.sha1()
+		hasher.update(api_key.encode("ascii"))
+		auth_service.key = hasher.hexdigest()
+
 	if "APIKEY" in os.environ: auth_service.key = os.environ["APIKEY"]
 
 	if not app.debug:
