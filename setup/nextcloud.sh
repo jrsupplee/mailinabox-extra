@@ -24,8 +24,8 @@ InstallNextcloud() {
 	hash_contacts=$4
 	version_calendar=$5
 	hash_calendar=$6
-	version_user_external=$7
-	hash_user_external=$8
+	version_user_external=${7:-}
+	hash_user_external=${8:-}
 
 	echo
 	echo "Upgrading to Nextcloud version $version"
@@ -310,6 +310,9 @@ hide_output sudo -u www-data php /usr/local/lib/owncloud/console.php app:enable 
 # Check for success (0=ok, 3=no upgrade needed).
 sudo -u www-data php /usr/local/lib/owncloud/occ upgrade
 if [ \( $? -ne 0 \) -a \( $? -ne 3 \) ]; then exit 1; fi
+
+# Disable default apps that we don't support
+sudo -u www-data php /usr/local/lib/owncloud/occ app:disable photos dashboard activity
 
 # Set PHP FPM values to support large file uploads
 # (semicolon is the comment character in this file, hashes produce deprecation warnings)
