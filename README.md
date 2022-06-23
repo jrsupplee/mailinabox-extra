@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.57a-extra-0.14-beta
+
+* Update to mail-in-a-box v57a
+
 ### v0.55-extra-0.14-beta
 
 * Update to mail-in-a-box v55
@@ -206,7 +210,7 @@ Clone this repository and checkout the tag corresponding to the most recent rele
 
 	$ git clone https://github.com/mail-in-a-box/mailinabox
 	$ cd mailinabox
-	$ git checkout v56
+	$ git checkout v57a
 
 Begin the installation.
 
@@ -225,7 +229,7 @@ This is a challenge faced by everyone who runs their own mail server, with or wi
 Contributing and Development
 ----------------------------
 
-Mail-in-a-Box is an open source project. Your contributions and pull requests are welcome. See [CONTRIBUTING](CONTRIBUTING.md) to get started.
+Mail-in-a-Box is an open source project. Your contributions and pull requests are welcome. See [CONTRIBUTING](CONTRIBUTING.md) to get started. 
 
 
 The Acknowledgements
