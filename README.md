@@ -34,7 +34,7 @@ Installing v0.4x-extra
 
 To install the latest version, log into your box and execute the following commands:
 
-	$ git clone https://github.com/jrsupplee/mailinabox-extra.git mailinabox
+	$ git clone https://github.com/uksitebuilder/mailinabox-extra.git mailinabox
 	$ cd mailinabox
     $ sudo bash setup/bootstrap.sh
 
@@ -50,7 +50,7 @@ Upgrading v0.4x to v.0.4x-extra
 
 * Clone this repository using:
 
-    `git clone https://github.com/jrsupplee/mailinabox-extra.git mailinabox`
+    `git clone https://github.com/ukitebuilder/mailinabox-extra.git mailinabox`
 
 * cd into `mailinabox` and run `sudo bash setup/bootstrap.sh`  On occasion there are lock errors when updating `Munin`.  Just re-run `sudo setup/start.sh` until the error does not occur.
 

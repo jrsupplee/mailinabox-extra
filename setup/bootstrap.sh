@@ -57,7 +57,7 @@ if [ ! -d $HOME/mailinabox ]; then
 	echo Downloading Mail-in-a-Box $TAG. . .
 	git clone \
 		-b $TAG --depth 1 \
-		https://github.com/jrsupplee/mailinabox-extra \
+		https://github.com/uksitebuilder/mailinabox-extra \
 		$HOME/mailinabox \
 		< /dev/null 2> /dev/null
 

@@ -911,7 +911,7 @@ def get_latest_miab_version():
     from socket import timeout
 
     try:
-        return re.search(b'TAG=(.*)', urlopen("https://raw.githubusercontent.com/jrsupplee/mailinabox-extra/master/setup/bootstrap.sh", timeout=5).read()).group(1).decode("utf8")
+        return re.search(b'TAG=(.*)', urlopen("https://raw.githubusercontent.com/uksitebuilder/mailinabox-extra/master/setup/bootstrap.sh", timeout=5).read()).group(1).decode("utf8")
     except (HTTPError, URLError, timeout):
         return None
 
@@ -933,7 +933,7 @@ def check_miab_version(env, output):
 		elif latest_ver is None:
 			output.print_error("Latest Mail-in-a-Box version could not be determined. You are running version %s." % this_ver)
 		else:
-			output.print_error("A new version of Mail-in-a-Box is available. You are running version %s. The latest version is %s. For upgrade instructions, see https://github.com/jrsupplee/mailinabox-extra/blob/master/README.md. "
+			output.print_error("A new version of Mail-in-a-Box is available. You are running version %s. The latest version is %s. For upgrade instructions, see https://github.com/uksitebuilder/mailinabox-extra/blob/master/README.md. "
 				% (this_ver, latest_ver))
 
 def run_and_output_changes(env, pool):
