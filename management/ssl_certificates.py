@@ -361,6 +361,7 @@ def provision_certificates(env, limit_domains):
 						"--manual-cleanup-hook", os.path.join(miab_dir, "tools/dns-cleanup.sh"),
 
 						"--config-dir", account_path,
+						"--manual-public-ip-logging-ok",
 						#"--staging",
 					], stderr=subprocess.STDOUT).decode("utf8")
 					install_cert_copy_file(cert_file, env)
