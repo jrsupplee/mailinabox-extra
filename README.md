@@ -76,6 +76,10 @@ Issues
 Changes
 -------
 
+### v0.57a-extra-0.14-beta
+
+* Update to mail-in-a-box v57a
+
 ### v0.55-extra-0.14-beta
 
 * Update to mail-in-a-box v55
@@ -206,7 +210,7 @@ Clone this repository and checkout the tag corresponding to the most recent rele
 
 	$ git clone https://github.com/mail-in-a-box/mailinabox
 	$ cd mailinabox
-	$ git checkout v56
+	$ git checkout v57a
 
 Begin the installation.
 
